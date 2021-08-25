@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>ROI Calculator</title>
+  </head>
+  <body class="bg-dark">
+       <div class="container">
+           <div class="col-md-6 mx-auto">
+               <div class="card card-body text-center mt-5">
+                <h1 >Return On Investment</h1>
+                <form id='loan-form'>
+                    <div class="form-row align-items-center">
+                      <div class="col-lg-3 btn w-100 my-1 mx-auto">
+                        <div class="input-group">
+                            <div class="icon money-wave">
+                                <i class="fas fa-money-bill fa-2x m-2"></i>
+                            </div>
+                          <input type="text" class="form-control" id="amount" placeholder="Amount Invested">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 btn w-100 my-1 mx-auto">
+                        <div class="input-group">
+                            <div class="icon money-wave">
+                                <i class="fas fa-money-check-alt fa-2x m-2"></i>
+                            </div>
+                          <input type="text" class="form-control" id="return" placeholder="Amount Gained">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 btn w-100 my-1 mx-auto">
+                        <div class="input-group">
+                            <div class="icon money-wave">
+                                <i class="fas fa-calendar-alt fa-2x m-2"></i>
+                            </div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Investment Period:</div>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" onchange="changeOption()" checked>
+                                <label class="btn btn-secondary mx-5" for="option1">Dates</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" onchange="changeOption()">
+                                <label class="btn btn-secondary" for="option2">Period</label>
+                            </div>
+                        </div>
+                        <div class="choiceClass">
+                            <div class="choiceClass1">
+                                <label for="startDate">Start Date:</label>
+                                <input type="date" class="datechoose1" name="date1"  autocomplete="off">
+                                <label for="EndDate">End Date:</label>
+                                <input type="date" class="datechoose2" name="date2"  autocomplete="off">
+                            </div> 
+                            <div class="choiceClass2">
+                                <label for="lengthOfTime">Length Of Time:</label>
+                                <input type="text" class="datechoose3" name="text2"  autocomplete="off">
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 btn w-100 my-1 mx-auto">
+                        <div class="input-group">
+                            <div class="col-auto w-100">
+                                <button type="submit" id="btn1" class="btn btn-primary w-100 mb-2 mx-auto">Submit<i class="fas fa-greater-than fa-l m-2"></i></i></button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- <div class="div loader">
+                      <img src="img/loading.gif" alt="">
+                  </div> -->
+                  <div class="results pt-4">
+                      <h5>Results</h5>
+                      <div class="col-lg-3 btn w-100 my-1 mx-auto">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">Investment Gain</div>
+                          </div>
+                          <input type="text" class="form-control" id="gain" disabled>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">ROI</div>
+                            </div>
+                            <input type="text" class="form-control" id="roi" disabled>
+                          </div>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">Annualized ROI</div>
+                            </div>
+                            <input type="text" class="form-control" id="length" disabled>
+                          </div>
+                      </div>
+                  </div>
+               </div>       
+           </div>
+    
+            
+
+       </div>
+       <div class="footer">
+            <div class="month">
+
+            </div>
+            <div class="totalpay">
+
+            </div>
+            <div class="totalint">
+
+            </div>   
+       </div>
+   </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1e59619f14.js" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+    <script src="app.js"></script>
+  </body>
+</html>
